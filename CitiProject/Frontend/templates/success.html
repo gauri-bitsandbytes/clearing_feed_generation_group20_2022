@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Valid Data</title>
+
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <style>
+	body {
+  		background-image: url('https://media.istockphoto.com/vectors/abstract-white-background-vector-id1142563796?k=20&m=1142563796&s=612x612&w=0&h=kZABOtzW6eQOMZvDuLHiNsh-mM_2o9slZKq6-GN6W64=');
+  		background-repeat: no-repeat;
+  		background-attachment: fixed;
+  		background-size: cover;
+}
+</style>
+</head>
+
+<body >
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">CLEARING FEED GENERATION</a>
+        <button type="button" class="btn btn-outline-success" th:onclick="|window.location.href='/'|">Logout</button>
+        </div>
+    </nav>
+    
+    <br><br><br>
+
+	<center>
+		<div class="container">
+	        <div class="row">
+	            <center><h1>Valid Transaction</h1></center>
+				<br>
+	            <table class="table" border=1>
+	                <thead>
+	                    <tr>
+	                    	<th>Transaction Reference</th>
+	                    	<th>Value Date</th>
+	                        <th>Payer Name</th>
+	                        <th>Payer Amount</th>
+	                        <th>Payee Name</th>
+	                        <th>Payee Amount</th>
+	                        <th>Amount</th>
+	                    </tr>
+	                </thead>
+	                <tbody>
+	                    <tr th:each="data : ${data}">
+	                    	<td th:text="${data.transactionRef}"></td>
+	                       	<td th:text="${data.valueDate}"></td>
+	                        <td th:text="${data.payerName}"></td>
+	                        <td th:text="${data.payerAccount}"></td>
+	                        <td th:text="${data.payeeName}"></td>
+	                        <td th:text="${data.payeeAccount}"></td>
+	                        <td th:text="${data.amount}"></td>
+	                    </tr>
+	                </tbody>
+	            </table>
+	        </div>
+	
+	    </div>
+	    
+	    <br><br>
+	    
+	    
+	    <div class="container">
+        <div class="row">
+            <center><h1>Invalid Transaction</h1></center>
+			<br>
+            <table class="table" border=1>
+                <thead>
+                    <tr>
+                    	<th>Transaction Reference</th>
+                    	<th>Value Date</th>
+                        <th>Payer Name</th>
+                        <th>Payer Amount</th>
+                        <th>Payee Name</th>
+                        <th>Payee Amount</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="dataf : ${dataf}">
+                    	<td th:text="${dataf.transactionRef}"></td>
+                       	<td th:text="${dataf.valueDate}"></td>
+                        <td th:text="${dataf.payerName}"></td>
+                        <td th:text="${dataf.payerAccount}"></td>
+                        <td th:text="${dataf.payeeName}"></td>
+                        <td th:text="${dataf.payeeAccount}"></td>
+                        <td th:text="${dataf.amount}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+	    
+	   <br><br>
+	   <br><br>
+	   <button type="button" class="btn btn-dark btn-lg" th:onclick="|window.location.href='/file'|">BACK</button>
+	</center>  
+	    
+	   </section>
+	   
+	   
+	  	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+</body>
+
+</html>
